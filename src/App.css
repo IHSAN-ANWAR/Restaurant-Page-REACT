@@ -81,36 +81,6 @@ font-weight: bold;
   position: relative;
 }
 
-/* .banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.banner h2,
-.banner p {
-  position: relative;
-  z-index: 2;
-} */
-
-/* .banner h2 {
-  font-size: 35px;
-  font-weight: 900;
-  color:white;
-}
-
-.banner p {
-  margin-top: 10px;
-  max-width: 1450px;
-  font-size: 20px;
-  color:white;
-} */
-
 /* MAIN SECTION */
 .main {
   padding: 40px 20px;
@@ -161,10 +131,7 @@ font-weight: bold;
   
 }
 
-/* .card:hover img {
-  transform: scale(1.1);
- 
-} */
+
 
 .card-content {
   padding: 20px;
@@ -214,7 +181,91 @@ font-weight: bold;
   
 }
 
-@media (min-width: 768px) {
+
+.hamburger{
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger .bar{
+display: block;
+width: 26px;
+height: 3px;
+margin: 5px 0;
+background:#fff;
+transition: transform 0.3s ease, opacity 0.3s ease;
+
+}
+
+
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+  /* Stack logo + button */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Hide nav initially on mobile */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #1a1a1a;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  /* Show when open */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 15px 20px;
+    width: 100%;
+    color: #fff;
+  }
+
+  /* Optional: underline hover still works */
+  .nav-links li::after {
+    bottom: 8px;
+    background-color: #fff;
+  }
+
+  /* Smaller logo on mobile */
+  .navbar .logo {
+    height: 50px;
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
